@@ -1,0 +1,50 @@
+<!--
+ * @Author: wangyunbo
+ * @Date: 2022-02-11 16:30:09
+ * @LastEditors: wangyunbo
+ * @LastEditTime: 2022-02-14 09:15:31
+ * @FilePath: \mx\example\editors\index.html
+ * @Description: file content
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/grapheditor.css" />
+  <script type="text/javascript">
+    	var urlParams = (function (url) {
+          var result = new Object();
+          var idx = url.lastIndexOf('?');
+
+          if (idx > 0) {
+            var params = url.substring(idx + 1).split('&');
+
+            for (var i = 0; i < params.length; i++) {
+              idx = params[i].indexOf('=');
+
+              if (idx > 0) {
+                result[params[i].substring(0, idx)] = params[i].substring(idx + 1);
+              }
+            }
+          }
+
+          return result;
+        })(window.location.href);
+      	mxLoadResources = false;
+  </script>
+  <script src="../../src/js/mxClient.js"></script>
+  <script src="js/Editor.js"></script>
+</head>
+<body class="geEditor">
+  <script>
+    (
+      function(){
+        var editorUiInit = EditorUi.prototype.init;
+      }
+    )();
+  </script>
+</body>
+</html>
